@@ -137,6 +137,8 @@ fixedHeight                          | Boolean   | false            | Since some
 renderStaticRangeLabel(`DefinedRange`)| Function |                  | Callback function to be triggered for the static range configurations that have `hasCustomRendering: true` on them. Instead of rendering `staticRange.label`, return value of this callback will be rendered.
 staticRanges(`DefinedRange`, `DateRangePicker`)  | Array            | [default preDefined ranges](https://github.com/Adphorus/react-date-range/blob/master/src/defaultRanges.js)             | -
 inputRanges(`DefinedRange`, `DateRangePicker`)   | Array            | [default input ranges](https://github.com/Adphorus/react-date-range/blob/master/src/defaultRanges.js)             | -
+onRangeAdded(`newRanges`, `rangeAdded`)   | Func            | Callback function for new range added (for DynamicDateRange component). `newRanges: all ranges with the new range added. rangeAdded: the new added range`.             | -
+onRangeDeleted(`newRanges`, `rangeDeleted`)   | Func            | Callback function for range deleted (for DynamicDateRange component). `newRanges: all ranges with the new range added. rangeDeleted: the range deleted`             | -
 
  *shape of range:
  ```js

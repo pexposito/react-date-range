@@ -8,7 +8,11 @@ import {
   endOfWeek,
   differenceInCalendarDays,
   addDays,
+  isWithinInterval,
+  isDate,
 } from 'date-fns';
+import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
 
 export function calcFocusDate(currentFocusedDate, props) {
   const { shownDate, date, months, ranges, focusedRange, displayMode } = props;
@@ -81,4 +85,21 @@ export function generateStyles(sources) {
       return styles;
     }, {});
   return generatedStyles;
+}
+
+export function getRangeForADay(day, ranges) {
+  if (isDate(day) && !isEmpty(ranges)) {
+    for (let range of ranges) {
+      if (
+        day > range.startDate &&
+        isWithinInterval(day, {
+          start: range.startDate,
+          end: range.endDate === null ? addDays(day, 1) : range.endDate, // endDate can be null, in this case we add 1 day to the day we are evaluating
+        })
+      ) {
+        return range;
+      }
+    }
+  }
+  return;
 }

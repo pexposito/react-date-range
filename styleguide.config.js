@@ -75,6 +75,7 @@ module.exports = {
     'react-date-range': path.resolve(__dirname, moduleSource),
   },
   webpackConfig: {
+    devtool: 'source-map',
     module: {
       rules: [
         {
@@ -103,6 +104,10 @@ module.exports = {
     {
       name: 'Components',
       sections: [
+        {
+          components: () => ['src/components/DynamicDateRange/index.js'],
+          usageMode: 'hide',
+        },
         {
           components: () => ['src/components/DateRangePicker/index.js'],
           usageMode: 'hide',

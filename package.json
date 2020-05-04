@@ -38,7 +38,11 @@
   ],
   "dependencies": {
     "classnames": "^2.2.6",
+    "i18next": "^19.4.4",
+    "i18next-browser-languagedetector": "^4.1.1",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
+    "react-i18next": "^11.4.0",
     "react-list": "^0.8.13",
     "shallow-equal": "^1.2.1"
   },
